@@ -9,7 +9,7 @@ const port = process.env.PORT;
 
 //Define request response in root URL (/)
 app.get('/', function (req, res) {
-  res.send('Hello World v2.1')
+  res.send('Hello World!')
 })
 
 //Launch listening server on port 8080
