@@ -1,15 +1,18 @@
-const http = require('http');
-const name = 'node-hello-world';
-const port = '8888';
+//Load express module with `require` directive
+var express = require('express');
+if(process.env.NODE_ENV !== 'prod') {
+  require('dotenv').load();
+}
 
-const app = new http.Server();
+var app = express();
+const port = process.env.PORT;
 
-app.on('request', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.write('Hello World');
-  res.end('\n');
-});
+//Define request response in root URL (/)
+app.get('/', function (req, res) {
+  res.send('Hello World v2.1')
+})
 
-app.listen(port, () => {
-  console.log(`${name} is listening on port ${port}`);
-});
+//Launch listening server on port 8080
+app.listen(port, function () {
+  console.log(`App listening on port ${port}!`)
+})
