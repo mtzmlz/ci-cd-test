@@ -1,11 +1,11 @@
 //Load express module with `require` directive
 var express = require('express');
-if(process.env.NODE_ENV !== 'prod') {
-  require('dotenv').load();
-}
+// if(process.env.NODE_ENV !== 'prod') {
+//   require('dotenv').load();
+// }
 
 var app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 
 //Define request response in root URL (/)
 app.get('/', function (req, res) {
