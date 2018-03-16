@@ -2,12 +2,12 @@
 oc new-project ci-cd-demo \
     --description="CI-CD Demo project for NEXT Team" \
     --display-name="CI-CD Demo"
-
+   
 # create nodejs application pointing to github repo
 oc new-app https://github.com/mtzmlz/ci-cd-test.git \
-    --strategy=source
-    --env PORT=8080
-
+    --strategy=source \
+    --env PORT=8080 \
+    -l name=node-hello
 # expose application by creating a service and a route
 oc expose svc/ci-cd-test
 
