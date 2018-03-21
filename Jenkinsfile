@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     // this tool will be used for all stages/steps except over-written
     tools {nodejs "node9"}
      
