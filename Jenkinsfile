@@ -1,20 +1,13 @@
 pipeline {
-    agent any
-
+    // this tool will be used for all stages/steps except over-written
+    tools {nodejs "version-name-set-in-configure-system"}
+     
     stages {
-        stage('Build 2') {
+        stage('Example') {
             steps {
-                sh 'npm build'
-            }
-        }
-        stage('Test 2') {
-            steps {
-                sh 'npm test'
-            }
-        }
-        stage('Deploy 2') {
-            steps {
-                echo 'Deploying...'
+                // can override tool here
+                tool name: 'node-version-name-set-in-configure-system'
+                sh 'npm config ls'
             }
         }
     }
