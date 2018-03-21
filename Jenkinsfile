@@ -4,11 +4,24 @@ pipeline {
     tools {nodejs "node9"}
      
     stages {
-        stage('Example') {
+        stage('Build') {
             steps {
                 // can override tool here
                 tool name: 'node9'
-                sh 'npm config ls'
+                sh 'npm build'
+            }
+        }
+        stage('Test') {
+            steps {
+                // can override tool here
+                tool name: 'node9'
+                sh 'npm test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // can override tool here
+                echo 'Deployed...'
             }
         }
     }
