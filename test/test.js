@@ -4,7 +4,7 @@ var server = require('../server');
 // if(process.env.NODE_ENV !== 'prod') {
 //     require('dotenv').load();
 // }
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8888;
 const url = 'http://127.0.0.1:' + port;
 
 describe('Status and content', () => {
