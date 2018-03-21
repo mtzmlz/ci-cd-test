@@ -26,5 +26,11 @@ pipeline {
                 }
             }
         }
+        stage('Provision') {
+            steps {
+                // tool name: 'node9'
+                sh 'sh upload-docker-image.sh'
+            }
+        }
     }
 }
