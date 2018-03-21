@@ -1,7 +1,6 @@
-organization=mtzmlz-github
-projectKey=ci-cd-demo2
-serverUrl=https://sonarcloud.io
-serverVersion=7.1.0.37735
-dashboardUrl=https://sonarcloud.io/dashboard/index/ci-cd-demo2
-ceTaskId=AWIwq-bDi0ZusgP9FQtB
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWIwq-bDi0ZusgP9FQtB
+projectKey=ci-cd-demo
+serverUrl=http://localhost:9000
+serverVersion=7.0.0.36138
+dashboardUrl=http://localhost:9000/dashboard/index/ci-cd-demo
+ceTaskId=AWJKPqDW3Qtn5WDP0b76
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWJKPqDW3Qtn5WDP0b76

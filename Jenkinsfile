@@ -22,7 +22,7 @@ pipeline {
                     scannerHome = tool 'sonar'
                 }
                 withSonarQubeEnv('sonar-local') {
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=ci-cd-demo  -Dsonar.sources=."
                 }
             }
         }
