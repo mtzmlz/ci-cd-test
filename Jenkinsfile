@@ -17,12 +17,12 @@ pipeline {
             }
         }
         stage('Scan with Sonar') {
-            steps {
+            // steps {
                 def scannerHome = tool 'SonarQube Scanner 2.8';
                 withSonarQubeEnv('sonar-local') {
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
-            }
+            // }
         }
     }
 }
