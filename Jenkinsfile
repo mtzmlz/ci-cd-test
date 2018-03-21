@@ -6,22 +6,22 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // can override tool here
                 tool name: 'node9'
                 sh 'npm install'
             }
         }
         stage('Test') {
             steps {
-                // can override tool here
                 tool name: 'node9'
                 sh 'npm test'
             }
         }
-        stage('Deploy') {
+        stage('Scan with Sonar') {
             steps {
-                // can override tool here
-                echo 'Deployed...'
+                def scannerHome = tool 'SonarQube Scanner 2.8';
+                withSonarQubeEnv('sonar-local') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
             }
         }
     }
