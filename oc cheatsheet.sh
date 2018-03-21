@@ -1,3 +1,5 @@
+## get openshift login command...
+
 ## create ci-cd-demo project
 oc new-project ci-cd-demo \
     --description="CI-CD Demo project for NEXT Team" \
@@ -9,7 +11,7 @@ oc new-app https://github.com/mtzmlz/ci-cd-test.git \
     --env PORT=8080 \
     -l name=node-hello
 
-oc new-app https://github.com/mtzmlz/ci-cd-test.git#master \
+oc new-app https://github.com/mtzmlz/ci-cd-test.git \
     --strategy=source \
     --env PORT=8080 \
     -l name=node-hello
@@ -33,3 +35,7 @@ curl -H "X-GitHub-Event: push" -H "Content-Type: application/json" \
 
 # sonarqube token: 74490535ce6acdd4206d85283cc400cda3e98102
 # sonarqube project key: ci-cd-demo2
+
+sonar.projectKey=ci-cd-demo2
+sonar.organization=mtzmlz-github
+sonar.sources=.
