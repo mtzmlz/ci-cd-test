@@ -8,7 +8,7 @@ pipeline {
             steps {
                 // can override tool here
                 tool name: 'node9'
-                sh 'npm build'
+                sh 'npm install'
             }
         }
         stage('Test') {
