@@ -36,6 +36,12 @@ curl -H "X-GitHub-Event: push" -H "Content-Type: application/json" \
 # sonarqube token: 74490535ce6acdd4206d85283cc400cda3e98102
 # sonarqube project key: ci-cd-demo2
 
-sonar.projectKey=ci-cd-demo2
-sonar.organization=mtzmlz-github
-sonar.sources=.
+# sonar.projectKey=ci-cd-demo2
+# sonar.organization=mtzmlz-github
+# sonar.sources=.
+
+sonar-scanner \
+  -Dsonar.projectKey=ci-cd-demo \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=b4e3ceb5f92a9f432e96381c23b180e39cbddbbc

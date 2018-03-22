@@ -3,19 +3,19 @@ pipeline {
     tools {nodejs "node9"}
      
     stages {
-        stage('Build') {
+        stage('Build 1') {
             steps {
                 tool name: 'node9'
                 sh 'npm install'
             }
         }
-        stage('Test') {
+        stage('Test 1') {
             steps {
                 tool name: 'node9'
                 sh 'npm test'
             }
         }
-        stage('Scan with Sonar') {
+        stage('Scan with Sonar 1') {
             steps {
                 script {
                     // requires SonarQube Scanner 2.8+
@@ -26,7 +26,7 @@ pipeline {
                 }
             }
         }
-        stage('Provision') {
+        stage('Provision 1') {
             steps {
                 // tool name: 'node9'
                 sh 'sh upload-docker-image.sh'
